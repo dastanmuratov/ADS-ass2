@@ -30,15 +30,14 @@ public class MyWeughtedGraph<T> {
         }
 
     public void addEdge(Vertex<T> source, Vertex<T> dest, double weight) {
-        if(!hasVertex(source)) addVertex(source);
-        if(!hasVertex(dest))addVertex(dest);
+        if(hasVertex(source)) addVertex(source);
+        if(hasVertex(dest))addVertex(dest);
         if (hasEdge(source, dest)
                 || source.equals(dest))
             return;
         source.add(new MyEdge<>(source, dest, weight));
     }
-        if (undirected) return count / 2;
-
+        if(undirected) return count / 2;
         return count;
     }
     public boolean hasVertex(Vertex<T> v) {
@@ -49,5 +48,5 @@ public class MyWeughtedGraph<T> {
         return hasVertex(source) && source.hasAdjacentVertex(dest);
     }
     public Set<Vertex<T>> adjacencyList(Vertex<T> vertex) {
-        return !hasVertex(vertex) ? null : vertex.getAdjacentVertices();
+        return hasVertex(vertex) ? null : vertex.getAdjacentVertices();
     }
