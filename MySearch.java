@@ -22,7 +22,6 @@ public class MySearch<T> {
             ls.push(i);
         }
         ls.push(source);
-
         return ls;
     }
     public int getCount() {
