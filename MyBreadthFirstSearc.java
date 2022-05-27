@@ -13,9 +13,10 @@ public class MyBreadthFirstSearch<T> extends MySearch {
             Vertex<T> v = queue.remove();
             for (Vertex<T> vertex : graph.adjacencyList(v)) {
                 if (!marked.contains(vertex)) {
-                    marked.add(vertex);
-                    edgeTo.put(vertex, v);
                     queue.add(vertex);
+                    marked.add(vertex);
+                    edgeTo.put(vertex);
+                  
                 }
             }
         }
