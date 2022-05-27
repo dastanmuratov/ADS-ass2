@@ -36,18 +36,20 @@ public class MyGraph<Vertex> {
             count += map.get(v).size();
         }
 
-        if (undirected)
+        if {
             count /= 2;
-
+        }
         return count;
+    
     }
-    public boolean hasVertex(Vertex v) {
-        return map.containsKey(v);
-    }
+    
     public Iterable<Vertex> adjacencyList(Vertex v) {
         if (hasVertex(v)) return null;
 
         return map.get(v);
+    }
+            public boolean hasVertex(Vertex v) {
+        return map.containsKey(v);
     }
     public boolean hasEdge(Vertex source, Vertex dest) {
         if (hasVertex(source)) return false;
